@@ -1,0 +1,18 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= nmrsu
+$$ /opt/topspin3.0/data/nmrsu/nmr/Gopinath-040918-NAVL/7/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2018-04-11 16:15:47.779 -0500>,<nmrsu>,<vader7002>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2018-04-11 14:29:44.158 -0500,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       1B D5 FD D7 DD 0A 37 EB 47 95 86 0A 33 58 71 53
+       data hash MD5: 3988 * 1K
+       FC F6 87 FF BA 4A 06 EA 03 0E E0 13 A0 80 22 D1>)
+##END=
+
+$$ hash MD5
+$$ 28 BC 15 0B 7E 97 92 FF 57 57 4C AC 58 81 4C 48

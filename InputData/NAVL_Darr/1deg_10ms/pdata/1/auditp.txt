@@ -1,0 +1,23 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= nmrsu
+$$ /opt/topspin3.0/data/nmrsu/nmr/Gopinath-040918-NAVL/10/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2018-04-13 18:08:10.226 -0500>,<nmrsu>,<vader7002>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2018-04-13 16:23:25.152 -0500,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       1B D5 FD D7 DD 0A 37 EB 47 95 86 0A 33 58 71 53
+       data hash MD5: 3988 * 1K
+       8F 47 7E 44 D3 E9 69 0E 3B 9A A8 1D BA 5B DC 2C>)
+(   2,<2018-04-14 11:37:43.162 -0500>,<nmrsu>,<vader7002>,<proc2d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       xfb F2: SI = 16K WDW = 1 LB = 100 FT_mod = 6 PKNL = 1 PHC0 = 149.627 PHC1 = -378.733 F1: TDeff = 120 SI = 512 BC_mod = 2 WDW = 1 LB = 50 FT_mod = 6 FCOR = 0.5 REVERSE PHC0 = 36.3 PHC1 = -70.4
+       data hash MD5: 16K * 512
+       DD BF B7 9F 39 31 20 4E B8 93 BC E2 39 7F FC 20>)
+##END=
+
+$$ hash MD5
+$$ E1 70 6A 86 C1 E0 62 9E 99 C3 4E F6 0B BB C7 E7

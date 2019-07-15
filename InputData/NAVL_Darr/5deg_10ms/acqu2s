@@ -1,0 +1,22 @@
+##TITLE= Parameter file, TOPSPIN		Version 3.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1025	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= nmrsu
+$$ 2018-04-11 16:15:47.191 -0500  nmrsu@vader7002
+$$ /opt/topspin3.0/data/nmrsu/nmr/Gopinath-040918-NAVL/7/acqu2s
+$$ process /opt/topspin3.2.6/prog/mod/go
+##$ACQT0= 0
+##$BF1= 176.098119
+##$FnMODE= 4
+##$NUC1= <13C>
+##$NusJSP= 0
+##$NusT2= 1
+##$NusTD= 1024
+##$O1= 17609.8119
+##$SFO1= 176.1157288119
+##$SW= 189.269485231128
+##$SW_h= 33333.3333333333
+##$TD= 1024
+##END=

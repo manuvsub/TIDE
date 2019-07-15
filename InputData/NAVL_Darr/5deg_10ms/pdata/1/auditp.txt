@@ -1,0 +1,35 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= nmrsu
+$$ /opt/topspin3.0/data/nmrsu/nmr/Gopinath-040918-NAVL/7/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2018-04-11 16:15:47.779 -0500>,<nmrsu>,<vader7002>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2018-04-11 14:29:44.158 -0500,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       1B D5 FD D7 DD 0A 37 EB 47 95 86 0A 33 58 71 53
+       data hash MD5: 3988 * 1K
+       FC F6 87 FF BA 4A 06 EA 03 0E E0 13 A0 80 22 D1>)
+(   2,<2018-04-11 17:06:37.078 -0500>,<nmrsu>,<vader7002>,<proc2d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       xfb F2: SI = 16K WDW = 1 LB = 100 FT_mod = 6 PKNL = 1 PHC0 = 149.627 PHC1 = -378.733 F1: TDeff = 120 SI = 512 BC_mod = 2 WDW = 1 LB = 50 FT_mod = 6 FCOR = 0.5 REVERSE PHC0 = 36.3 PHC1 = -70.4
+       data hash MD5: 16K * 512
+       DB 20 7E 1B F4 1D 69 4A DC 53 95 96 2F FB B2 96>)
+(   3,<2018-04-13 15:01:30.910 -0500>,<nmrsu>,<vader7002>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=DARR-5degree-1H-flipangle
+       mixing 10 ms; 25c; 12kMAS;TITLE_END
+       data hash MD5: 16K * 512
+       DB 20 7E 1B F4 1D 69 4A DC 53 95 96 2F FB B2 96>)
+(   4,<2018-04-13 15:01:31.076 -0500>,<nmrsu>,<vader7002>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=DARR-5degree-1H-flipangle
+       mixing 10 ms; 25c; 12kMAS;TITLE_END
+       data hash MD5: 16K * 512
+       DB 20 7E 1B F4 1D 69 4A DC 53 95 96 2F FB B2 96>)
+##END=
+
+$$ hash MD5
+$$ C4 DB D4 1A 8E E6 36 3B AB 7B 7F C2 AB C8 14 8C

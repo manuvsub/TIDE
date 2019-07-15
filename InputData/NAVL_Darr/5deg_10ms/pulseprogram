@@ -1,0 +1,63 @@
+# 1 "/home/nmrsu/pprelease3.0_tested_2012_ready/Darr-gopi"
+;This pulse program is written for "Topspin3.1.5". We are not responsible for any damage resulting from the pulse sequence 
+;The t1 dimension is looped for (td1/4) times. So the total t1 evolution time is 
+;equal to (t1 dwell time or inf1)*(td1/4) 
+;For processing, use the macro "split" for separating first and second acquisitions.
+
+;Reference: Gopinath T. and Veglia, G.  Angew. Chem. Int. Ed. 2012, 51, 2731-2735
+
+"d12=3m"
+# 10 "/home/nmrsu/pprelease3.0_tested_2012_ready/Darr-gopi"
+define loopcounter count
+"count=td1/2"
+"in0=inf1"                  ;For 13C t1 evolution
+
+
+    dccorr
+# 1 "mc_line 17 file /home/nmrsu/pprelease3.0_tested_2012_ready/Darr-gopi dc-measurement inserted automatically"
+
+    dccorr
+# 17 "/home/nmrsu/pprelease3.0_tested_2012_ready/Darr-gopi"
+# 17 "/home/nmrsu/pprelease3.0_tested_2012_ready/Darr-gopi"
+1 ze
+    "cnst21=0"            ;cnst21 must be 0
+  
+2 d1 st0 do:f2 do:f3
+10u pl12:f2 pl1:f1 
+    p3:f2 ph1                        ;proton 90 pulse
+  0.3u
+  (p15 pl1 ph2):f1 (p15:sp0 ph10):f2   ;CP
+  0.5u pl2:f2                                  
+  1u cpds2:f2
+  d0                                                    ;13C t1 evolution
+(p1 pl11 ph22):f1 (1u do):f2
+(d20 pl14 ph2):f2   
+;d20
+10u pl13:f2                                                    
+(p1 pl11 ph23):f1 
+;10u pl13:f2
+1u cpds2:f2
+goscnp ph31                                             ;First acquisition         
+
+
+1m ipp1 ipp31 ipp2 ipp10 ipp22 ipp23
+lo to 2 times ns
+1m rpp1 rpp31 rpp2 rpp10 rpp22 rpp23
+1u do:f2
+30m wr #0 if #0 zd
+1m ip22
+lo to 2 times 2
+1m id0
+1m rp22
+lo to 2 times count
+exit    
+# 51 "/home/nmrsu/pprelease3.0_tested_2012_ready/Darr-gopi"
+ph1= 1 3
+;ph1= 1 1 1 1 3 3 3 3
+ph2= 0
+ph10= 0
+ph22=3
+;ph23=0 3 2 1
+ph23=0
+ph31=1 3
+;ph31= 0 3 2 1 2 1 0 3

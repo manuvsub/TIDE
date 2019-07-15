@@ -1,0 +1,300 @@
+label list:
+line no.  pc   label
+      22 0xffffffff 1
+      25 0xffffffff 2
+
+pulse program: "/opt/topspin3.0/data/nmrsu/nmr/Gopinath-040918-NAVL/10/pulseprogram"
+================
+dur0 == line 0
+fixdel(10.000000 usec) setNmr5: 0x80 setNmr6: 0xc 
+
+dur1 == line 0
+fixdel(1000.000000 usec) clrNmr1: 0x400000 
+
+'Darr-gopi': line   1--->;This pulse program is written for "Topspin3.1.5". We are not responsible for any damage resulting from the pulse sequence 
+'Darr-gopi': line   2--->;The t1 dimension is looped for (td1/4) times. So the total t1 evolution time is 
+'Darr-gopi': line   3--->;equal to (t1 dwell time or inf1)*(td1/4) 
+'Darr-gopi': line   4--->;For processing, use the macro "split" for separating first and second acquisitions.
+'Darr-gopi': line   5--->
+'Darr-gopi': line   6--->;Reference: Gopinath T. and Veglia, G.  Angew. Chem. Int. Ed. 2012, 51, 2731-2735
+'Darr-gopi': line   7--->
+'Darr-gopi': line   8--->"d12=3m"
+'Darr-gopi': line  10--->define loopcounter count
+'Darr-gopi': line  11--->"count=td1/2"
+'Darr-gopi': line  12--->"in0=inf1"                  ;For 13C t1 evolution
+'Darr-gopi': line  13--->
+'Darr-gopi': line  14--->
+'Darr-gopi': line  15--->    dccorr
+'Darr-gopi': line   0, dc-measuremen  line 1--->
+
+Begin of PTList: lalign
+{
+    dur2 == line 16
+    fixdel(2.000000 usec) SYNCRCU 
+    
+    dur3 == line 16
+    fixdel(4.500000 usec) ADCGO RCU 1 ADCGO_DC channel 1: SY receive phase(65,0) PHADDO PHREF 
+    phase(65,8) receive 
+}
+
+
+{
+    dur4 == line 16
+    de 
+    
+    dur5 == line 16
+    fixdel(1000.000000 usec) setNmr1: 0x2100 
+    
+    dur6 == line 16
+    fixdel(500.000000 usec) clrNmr1: 0x2100  EVENT-EOSZ eos1 
+}
+End of PTList
+
+'Darr-gopi': line   0, dc-measuremen  line 2--->    dccorr
+
+Begin of PTList: lalign
+{
+    dur7 == line 19
+    fixdel(2.000000 usec) SYNCRCU 
+    
+    dur8 == line 19
+    fixdel(4.500000 usec) ADCGO RCU 1 ADCGO_DC channel 1: SY receive phase(65,0) PHADDO PHREF 
+    phase(65,8) receive 
+}
+
+
+{
+    dur9 == line 19
+    de 
+    
+    dur10 == line 19
+    fixdel(1000.000000 usec) setNmr1: 0x2100 
+    
+    dur11 == line 19
+    fixdel(500.000000 usec) clrNmr1: 0x2100  EVENT-EOSZ eos1 
+}
+End of PTList
+
+'Darr-gopi': line  17--->1 ze
+'Darr-gopi': line  18--->    "cnst21=0"            ;cnst21 must be 0
+'Darr-gopi': line  19--->  
+dur12 == line 22
+fixdel(3000.000000 usec)  EVENT-EOSZ ze1 
+
+'Darr-gopi': line  20--->2 d1 st0 do:f2 do:f3
+dur13 == line 25
+d1 channel 2: DO channel 3: DO  AQBUS-ST0 RCU 1 
+
+'Darr-gopi': line  21--->10u pl12:f2 pl1:f1 
+dur14 == line 26
+fixdel(10.000000 usec) channel 1: set power PL1 channel 2: set power PL12 
+
+'Darr-gopi': line  22--->    p3:f2 ph1                        ;proton 90 pulse
+dur15 == line 27
+p3 Pulse2 phase(1,0) 
+
+'Darr-gopi': line  23--->  0.3u
+dur16 == line 28
+fixdel(0.300000 usec) 
+
+'Darr-gopi': line  24--->  (p15 pl1 ph2):f1 (p15:sp0 ph10):f2   ;CP
+
+Begin of PTList: lalign
+{
+    dur17 == line 29
+    p15 Pulse1 channel 1: set power PL1 phase(2,0) 
+}
+
+
+{
+    dur18 == line 29
+    p15 Shape Pulse SP0:f2 channel 2: shape pulse 0 via ptr -1 phase(10,0) 
+}
+End of PTList
+
+'Darr-gopi': line  25--->  0.5u pl2:f2                                  
+dur19 == line 30
+fixdel(0.500000 usec) channel 2: set power PL2 
+
+'Darr-gopi': line  26--->  1u cpds2:f2
+dur20 == line 31
+fixdel(1.000000 usec) channel 2: CPDS prog 1 (CPDPRG2)via ptr 0 
+
+'Darr-gopi': line  27--->  d0                                                    ;13C t1 evolution
+dur21 == line 32
+d0 
+
+'Darr-gopi': line  28--->(p1 pl11 ph22):f1 (1u do):f2
+
+Begin of PTList: lalign
+{
+    dur22 == line 33
+    p1 Pulse1 channel 1: set power PL11 phase(22,0) 
+}
+
+
+{
+    dur23 == line 33
+    fixdel(1.000000 usec) channel 2: DO 
+}
+End of PTList
+
+'Darr-gopi': line  29--->(d20 pl14 ph2):f2   
+'Darr-gopi': line  30--->;d20
+
+Begin of PTList: lalign
+{
+    dur24 == line 34
+    d20 Pulse2 channel 2: set power PL14 phase(2,0) 
+}
+End of PTList
+
+'Darr-gopi': line  31--->10u pl13:f2                                                    
+dur25 == line 36
+fixdel(10.000000 usec) channel 2: set power PL13 
+
+'Darr-gopi': line  32--->(p1 pl11 ph23):f1 
+'Darr-gopi': line  33--->;10u pl13:f2
+
+Begin of PTList: lalign
+{
+    dur26 == line 37
+    p1 Pulse1 channel 1: set power PL11 phase(23,0) 
+}
+End of PTList
+
+'Darr-gopi': line  34--->1u cpds2:f2
+dur27 == line 39
+fixdel(1.000000 usec) channel 2: CPDS prog 1 (CPDPRG2)via ptr 0 
+
+'Darr-gopi': line  35--->goscnp ph31                                             ;First acquisition         
+'Darr-gopi': line  36--->
+'Darr-gopi': line  37--->
+
+Begin of PTList: lalign
+{
+    dur28 == line 40
+    fixdel(2.000000 usec) SYNCRCU 
+    
+    dur29 == line 40
+    fixdel(4.500000 usec) ADCGO RCU 1 channel 1: SY receive phase(65,0) PHADDO PHREF 
+    phase(31,8) receive 
+}
+
+
+{
+    dur30 == line 40
+    de 
+    
+    dur31 == line 40
+    aq channel 1: CPDSNG prog 16 (CPDPRG17)via ptr 0 
+    
+    dur32 == line 40
+    fixdel(2500.000000 usec) 
+    
+    dur33 == line 40
+    fixdel(500.000000 usec) channel 1: Dwell off channel 1: SY transmit  EVENT-EOSZ eos1 
+    
+}
+End of PTList
+
+'Darr-gopi': line  38--->1m ipp1 ipp31 ipp2 ipp10 ipp22 ipp23
+'Darr-gopi': line  39--->lo to 2 times ns
+dur34 == line 43
+fixdel(1000.000000 usec) 
+inc phase (1) 
+inc phase (2) 
+inc phase (10) 
+inc phase (22) 
+inc phase (23) 
+inc phase (31) loop to 'Darr-gopi': line  20 times ns (ns+ds) 
+
+'Darr-gopi': line  40--->1m rpp1 rpp31 rpp2 rpp10 rpp22 rpp23
+dur35 == line 45
+fixdel(1000.000000 usec) 
+reset phase (1) 
+reset phase (2) 
+reset phase (10) 
+reset phase (22) 
+reset phase (23) 
+reset phase (31) 
+
+'Darr-gopi': line  41--->1u do:f2
+dur36 == line 46
+fixdel(1.000000 usec) channel 2: DO 
+
+'Darr-gopi': line  42--->30m wr #0 if #0 zd
+dur37 == line 47
+fixdel(30000.000000 usec)  EVENT-EOSZ zd1  AQBUS-WR RCU 1 wrif 0 
+
+'Darr-gopi': line  43--->1m ip22
+'Darr-gopi': line  44--->lo to 2 times 2
+dur38 == line 48
+fixdel(1000.000000 usec)  IRPTIPH 22 loop to 'Darr-gopi': line  20 times 2 
+
+'Darr-gopi': line  45--->1m id0
+dur39 == line 50
+fixdel(1000.000000 usec)  EVENT-ID 0 
+
+'Darr-gopi': line  46--->1m rp22
+'Darr-gopi': line  47--->lo to 2 times count
+dur40 == line 51
+fixdel(1000.000000 usec)  IRPTRPH 22 loop to 'Darr-gopi': line  20 times l117 
+
+'Darr-gopi': line  48--->exit    
+dur41 == line 53
+fixdel(50000.000000 usec) 
+
+dur42 == line 53
+fixdel(10000.000000 usec)  EVENT-EOSZ esc0 
+
+dur43 == line 53
+fixdel(10000.000000 usec) 
+
+
+phase program no. 65:
+Fraction:  4.000000 
+Increment:  0x4000 =  90.00 degrees
+  0:             0 =   0.00 degrees
+
+phase program no. 1: PHAUINC
+Fraction:  4.000000 
+Increment:  0x4000 =  90.00 degrees
+  0:        0x4000 =  90.00 degrees
+  1:        0xc000 = 270.00 degrees
+
+phase program no. 31: PHAUINC
+Fraction:  4.000000 
+Increment:  0x4000 =  90.00 degrees
+  0:        0x4000 =  90.00 degrees
+  1:        0xc000 = 270.00 degrees
+
+phase program no. 2: PHAUINC
+Fraction:  4.000000 
+Increment:  0x4000 =  90.00 degrees
+  0:             0 =   0.00 degrees
+
+phase program no. 10: PHAUINC
+Fraction:  4.000000 
+Increment:  0x4000 =  90.00 degrees
+  0:             0 =   0.00 degrees
+
+phase program no. 22: PHAUINC
+Fraction:  4.000000 
+Increment:  0x4000 =  90.00 degrees
+  0:        0xc000 = 270.00 degrees
+
+phase program no. 23: PHAUINC
+Fraction:  4.000000 
+Increment:  0x4000 =  90.00 degrees
+  0:             0 =   0.00 degrees
+file list:
+=================================================
+          filename              actlineno  offset
+=================================================
+              Darr-gopi        1            1
+              Darr-gopi       10            1
+Darr-gopi dc-measuremen       17           17
+              Darr-gopi       20            4
+              Darr-gopi       21            5
+              Darr-gopi       54            4

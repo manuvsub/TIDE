@@ -1,0 +1,2 @@
+TITLE=DARR-1degree-1H-flipangle
+mixing 10 ms; 25c; 12kMAS;TITLE_END

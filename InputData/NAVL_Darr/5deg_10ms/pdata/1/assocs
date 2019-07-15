@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TOPSPIN		Version 3.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= nmrsu
+$$ 2018-04-11 14:29:24.758 -0500  nmrsu@vader7002
+$$ /opt/topspin3.0/data/nmrsu/nmr/Gopinath-040918-NAVL/7/pdata/1/assocs
+$$ process /opt/topspin3.2.6/prog/mod/dirdata
+##$MULTDISP= </opt/topspin3.0/data/nmrsu/nmr/Gopinath-040918-NAVL/3/pdata/1>
+##END=

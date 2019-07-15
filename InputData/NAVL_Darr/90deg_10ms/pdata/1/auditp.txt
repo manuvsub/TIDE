@@ -1,0 +1,47 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= nmrsu
+$$ /opt/topspin3.0/data/nmrsu/nmr/Gopinath-040918-NAVL/6/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2018-04-11 13:24:03.701 -0500>,<nmrsu>,<vader7002>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2018-04-11 11:39:15.299 -0500,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       1B D5 FD D7 DD 0A 37 EB 47 95 86 0A 33 58 71 53
+       data hash MD5: 3988 * 1K
+       DB 67 95 FA 7A 23 E9 D9 BB A9 4D E6 FC B8 96 A5>)
+(   2,<2018-04-11 14:29:01.885 -0500>,<nmrsu>,<vader7002>,<proc2d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       xfb F2: SI = 16K WDW = 1 LB = 100 FT_mod = 6 PKNL = 1 PHC0 = 149.627 PHC1 = -378.733 F1: TDeff = 120 SI = 512 BC_mod = 2 WDW = 1 LB = 50 FT_mod = 6 FCOR = 0.5 REVERSE PHC0 = 36.3 PHC1 = -70.4
+       data hash MD5: 16K * 512
+       B3 D8 61 48 61 7E 1F 3B 57 74 34 A2 46 42 66 6D>)
+(   3,<2018-04-13 15:01:10.970 -0500>,<nmrsu>,<vader7002>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=DARR standard
+       mixing 10 ms; 25c; 12kMAS;TITLE_END
+       data hash MD5: 16K * 512
+       B3 D8 61 48 61 7E 1F 3B 57 74 34 A2 46 42 66 6D>)
+(   4,<2018-04-13 15:01:11.163 -0500>,<nmrsu>,<vader7002>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=DARR standard
+       mixing 10 ms; 25c; 12kMAS;TITLE_END
+       data hash MD5: 16K * 512
+       B3 D8 61 48 61 7E 1F 3B 57 74 34 A2 46 42 66 6D>)
+(   5,<2018-04-13 15:01:11.351 -0500>,<nmrsu>,<vader7002>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=DARR standard
+       mixing 10 ms; 25c; 12kMAS;TITLE_END
+       data hash MD5: 16K * 512
+       B3 D8 61 48 61 7E 1F 3B 57 74 34 A2 46 42 66 6D>)
+(   6,<2018-04-13 15:01:11.540 -0500>,<nmrsu>,<vader7002>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=DARR standard
+       mixing 10 ms; 25c; 12kMAS;TITLE_END
+       data hash MD5: 16K * 512
+       B3 D8 61 48 61 7E 1F 3B 57 74 34 A2 46 42 66 6D>)
+##END=
+
+$$ hash MD5
+$$ B5 4C 5E 3E 9C 66 2A 3F 26 91 92 67 A2 14 73 85
